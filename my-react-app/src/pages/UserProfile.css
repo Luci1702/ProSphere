@@ -1,0 +1,672 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+.up-wrapper {
+    background: #0a0a0f;
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.ps-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.ps-bg-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.1;
+    animation: orbFloat 8s ease-in-out infinite;
+}
+
+.orb1 {
+    width: 400px;
+    height: 400px;
+    background: #185FA5;
+    top: -100px;
+    left: -100px;
+}
+
+.orb2 {
+    width: 300px;
+    height: 300px;
+    background: #1D9E75;
+    bottom: -80px;
+    right: 0;
+    animation-delay: 3s;
+}
+
+@keyframes orbFloat {
+    0%,
+    100% {
+        transform: translate(0, 0)
+    }
+    50% {
+        transform: translate(20px, -20px)
+    }
+}
+
+.ps-grid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.02;
+    pointer-events: none;
+    background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+
+/* Navbar */
+
+.up-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(10, 10, 15, 0.9);
+    backdrop-filter: blur(20px);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.07);
+}
+
+.ps-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #4A9FE0, #1D9E75);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.up-nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.up-nav-links a {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.up-nav-links a:hover {
+    color: #fff;
+}
+
+.up-avatar-sm {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #185FA5, #1D9E75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* Cover */
+
+.up-cover {
+    height: 200px;
+    background: linear-gradient(135deg, #0f2a4a, #185FA5, #1D9E75);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.up-cover-edit {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 7px 14px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-size: 12px;
+    color: #fff;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+
+
+/* Profile section */
+
+.up-profile-section {
+    position: relative;
+    z-index: 1;
+    padding: 0 2rem;
+    background: rgba(10, 10, 15, 0.95);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.07);
+}
+
+.up-profile-top {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    padding-bottom: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.up-avatar-wrap {
+    position: relative;
+    margin-top: -50px;
+}
+
+.up-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #185FA5, #1D9E75);
+    border: 3px solid #0a0a0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.up-avatar-badge {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #1D9E75;
+    border: 2px solid #0a0a0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.up-profile-info {
+    flex: 1;
+    min-width: 200px;
+    padding-bottom: 4px;
+}
+
+.up-profile-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 3px;
+}
+
+.up-profile-title {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 6px;
+}
+
+.up-profile-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.up-profile-meta span {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.up-profile-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+    padding-bottom: 4px;
+    flex-wrap: wrap;
+}
+
+
+/* Buttons */
+
+.up-btn {
+    padding: 9px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.3s;
+    border: none;
+}
+
+.up-btn-primary {
+    background: linear-gradient(135deg, #185FA5, #1D9E75);
+    color: #fff;
+}
+
+.up-btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(24, 95, 165, 0.3);
+}
+
+.up-btn-outline {
+    background: transparent;
+    border: 0.5px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.up-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* Stats */
+
+.up-stats-row {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.up-stat {
+    text-align: center;
+    cursor: pointer;
+}
+
+.up-stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #4A9FE0, #1D9E75);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.up-stat-label {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 2px;
+}
+
+
+/* Tabs */
+
+.up-tabs {
+    display: flex;
+    gap: 0;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.07);
+    overflow-x: auto;
+}
+
+.up-tab {
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.4);
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.up-tab:hover {
+    color: #fff;
+}
+
+.up-tab.active {
+    color: #4A9FE0;
+    border-bottom-color: #4A9FE0;
+}
+
+
+/* Main layout */
+
+.up-main {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 16px;
+    padding: 1.5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* Cards */
+
+.up-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 1.2rem;
+    margin-bottom: 14px;
+}
+
+.up-card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.up-card-edit {
+    font-size: 12px;
+    color: #4A9FE0;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.up-card-edit:hover {
+    text-decoration: underline;
+}
+
+.up-about-text {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+}
+
+
+/* Skills */
+
+.up-skills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.up-skill {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s;
+}
+
+.up-skill:hover {
+    border-color: rgba(74, 159, 224, 0.4);
+    color: #fff;
+}
+
+.up-skill.top {
+    background: rgba(24, 95, 165, 0.15);
+    border-color: rgba(74, 159, 224, 0.3);
+    color: #4A9FE0;
+}
+
+
+/* Experience */
+
+.up-exp-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
+}
+
+.up-exp-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.up-exp-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+
+.up-exp-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.up-exp-company {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.up-exp-duration {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.28);
+    margin-top: 3px;
+}
+
+
+/* Portfolio */
+
+.up-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.up-portfolio-item {
+    aspect-ratio: 1;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+
+.up-portfolio-item:hover {
+    transform: scale(1.05);
+    border-color: rgba(74, 159, 224, 0.3);
+}
+
+
+/* Certifications */
+
+.up-cert-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.up-cert-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.up-cert-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.up-cert-name {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.up-cert-issuer {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.up-cert-badge {
+    margin-left: auto;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    background: rgba(29, 158, 117, 0.15);
+    color: #1D9E75;
+    border: 0.5px solid rgba(29, 158, 117, 0.2);
+    white-space: nowrap;
+}
+
+
+/* Sidebar */
+
+.up-sidebar-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 1.2rem;
+    margin-bottom: 14px;
+}
+
+.up-sidebar-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.up-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.05);
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.up-contact-item:last-child {
+    border-bottom: none;
+}
+
+.up-suggested {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.05);
+}
+
+.up-suggested:last-child {
+    border-bottom: none;
+}
+
+.up-sug-av {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.up-sug-name {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.up-sug-role {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.up-follow-btn {
+    margin-left: auto;
+    padding: 5px 12px;
+    background: rgba(24, 95, 165, 0.15);
+    border: 0.5px solid rgba(74, 159, 224, 0.3);
+    border-radius: 20px;
+    color: #4A9FE0;
+    font-size: 11px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.up-follow-btn:hover,
+.up-follow-btn.following {
+    background: rgba(24, 95, 165, 0.3);
+}
+
+.up-availability {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    background: rgba(29, 158, 117, 0.08);
+    border: 0.5px solid rgba(29, 158, 117, 0.2);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.up-avail-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #1D9E75;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0.4
+    }
+}
+
+.up-avail-text {
+    font-size: 12px;
+    color: #1D9E75;
+    font-weight: 500;
+}
+
+@media(max-width:768px) {
+    .up-main {
+        grid-template-columns: 1fr;
+    }
+    .up-sidebar {
+        display: none;
+    }
+    .up-profile-actions {
+        flex-wrap: wrap;
+    }
+    .up-nav-links {
+        display: none;
+    }
+}

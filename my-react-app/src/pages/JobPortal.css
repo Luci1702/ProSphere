@@ -1,0 +1,681 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+.jp-wrapper {
+    background: #0a0a0f;
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.ps-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.ps-bg-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.1;
+    animation: orbFloat 8s ease-in-out infinite;
+}
+
+.orb1 {
+    width: 400px;
+    height: 400px;
+    background: #185FA5;
+    top: -80px;
+    left: -80px;
+}
+
+.orb2 {
+    width: 300px;
+    height: 300px;
+    background: #1D9E75;
+    bottom: -80px;
+    right: -80px;
+    animation-delay: 3s;
+}
+
+@keyframes orbFloat {
+    0%,
+    100% {
+        transform: translate(0, 0)
+    }
+    50% {
+        transform: translate(20px, -20px)
+    }
+}
+
+.ps-grid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.02;
+    pointer-events: none;
+    background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.grad {
+    background: linear-gradient(135deg, #4A9FE0, #1D9E75);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* Navbar */
+
+.jp-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(10, 10, 15, 0.9);
+    backdrop-filter: blur(20px);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.07);
+}
+
+.ps-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #4A9FE0, #1D9E75);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.jp-nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.jp-nav-links a {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.jp-nav-links a:hover {
+    color: #fff;
+}
+
+.jp-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.jp-notif {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s;
+}
+
+.jp-notif:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.notif-dot {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4A9FE0;
+    border: 1.5px solid #0a0a0f;
+}
+
+.jp-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #185FA5, #1D9E75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* Hero */
+
+.jp-hero {
+    position: relative;
+    z-index: 1;
+    padding: 2.5rem 2rem 1rem;
+}
+
+.jp-hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.jp-hero p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 1.5rem;
+}
+
+.jp-search-bar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 8px;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s;
+}
+
+.jp-search-bar:focus-within {
+    border-color: rgba(74, 159, 224, 0.4);
+}
+
+.jp-search-icon {
+    font-size: 15px;
+    padding: 0 6px;
+    opacity: 0.4;
+}
+
+.jp-search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    padding: 6px 6px;
+}
+
+.jp-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.jp-search-divider {
+    width: 0.5px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.jp-search-btn {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #185FA5, #1D9E75);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.jp-search-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+
+/* Chips */
+
+.jp-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.jp-chip {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.04);
+    white-space: nowrap;
+}
+
+.jp-chip:hover {
+    border-color: rgba(74, 159, 224, 0.4);
+    color: #fff;
+}
+
+.jp-chip.active {
+    background: rgba(24, 95, 165, 0.2);
+    border-color: #4A9FE0;
+    color: #4A9FE0;
+}
+
+
+/* Stats bar */
+
+.jp-stats-bar {
+    display: flex;
+    gap: 2rem;
+    padding: 0.8rem 2rem;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.jp-stats-bar span {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.jp-stats-bar strong {
+    color: #4A9FE0;
+    font-weight: 500;
+}
+
+
+/* Main */
+
+.jp-main {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: calc(100vh - 260px);
+}
+
+
+/* Sidebar */
+
+.jp-sidebar {
+    padding: 1.5rem;
+    border-right: 0.5px solid rgba(255, 255, 255, 0.06);
+    overflow-y: auto;
+}
+
+.jp-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+}
+
+.jp-sidebar-header span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.jp-filter-clear {
+    font-size: 12px;
+    color: #4A9FE0;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    padding: 0;
+}
+
+.jp-filter-clear:hover {
+    text-decoration: underline;
+}
+
+.jp-filter-section {
+    margin-bottom: 1.5rem;
+}
+
+.jp-filter-title {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+}
+
+.jp-filter-option {
+    display: flex;
+    align-items: center;
+    padding: 7px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 1px;
+}
+
+.jp-filter-option:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.jp-filter-option input[type=checkbox] {
+    accent-color: #4A9FE0;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.jp-filter-label {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
+    margin-left: 8px;
+    flex: 1;
+}
+
+.jp-filter-count {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 2px 7px;
+    border-radius: 10px;
+}
+
+.jp-salary-range {
+    padding: 0 4px;
+}
+
+.jp-salary-range input[type=range] {
+    width: 100%;
+    accent-color: #4A9FE0;
+    cursor: pointer;
+    margin: 8px 0;
+}
+
+.jp-salary-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+
+/* Listings */
+
+.jp-listings {
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.jp-listings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+}
+
+.jp-listings-count {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.jp-listings-count strong {
+    color: #fff;
+}
+
+.jp-sort {
+    background: rgba(255, 255, 255, 0.05);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 7px 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    outline: none;
+}
+
+.jp-sort option {
+    background: #1a1a2e;
+}
+
+
+/* Job card */
+
+.jp-job-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.25rem;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.jp-job-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #185FA5, #1D9E75);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.jp-job-card:hover {
+    border-color: rgba(74, 159, 224, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(4px);
+}
+
+.jp-job-card:hover::before {
+    opacity: 1;
+}
+
+.jp-job-card.featured {
+    border-color: rgba(74, 159, 224, 0.2);
+    background: rgba(24, 95, 165, 0.04);
+}
+
+.jp-job-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.jp-company-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+
+.jp-job-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.jp-job-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 3px;
+    flex-wrap: wrap;
+}
+
+.jp-job-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.jp-badge {
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.badge-featured {
+    background: rgba(24, 95, 165, 0.2);
+    color: #4A9FE0;
+    border: 0.5px solid rgba(74, 159, 224, 0.2);
+}
+
+.badge-new {
+    background: rgba(29, 158, 117, 0.2);
+    color: #1D9E75;
+    border: 0.5px solid rgba(29, 158, 117, 0.2);
+}
+
+.badge-hot {
+    background: rgba(212, 83, 126, 0.2);
+    color: #D4537E;
+    border: 0.5px solid rgba(212, 83, 126, 0.2);
+}
+
+.badge-remote {
+    background: rgba(127, 119, 221, 0.2);
+    color: #9F99E8;
+    border: 0.5px solid rgba(127, 119, 221, 0.2);
+}
+
+.jp-company-name {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.jp-bookmark {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.25);
+    transition: all 0.2s;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.jp-bookmark:hover,
+.jp-bookmark.saved {
+    color: #4A9FE0;
+}
+
+.jp-job-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.jp-job-tag {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.jp-job-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.jp-job-meta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.jp-job-meta span {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.jp-apply-btn {
+    padding: 8px 18px;
+    background: linear-gradient(135deg, #185FA5, #1D9E75);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.3s;
+}
+
+.jp-apply-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(24, 95, 165, 0.3);
+}
+
+
+/* Load more */
+
+.jp-load-more {
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.jp-load-btn {
+    padding: 11px 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.jp-load-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border-color: rgba(74, 159, 224, 0.3);
+}
+
+@media(max-width:768px) {
+    .jp-main {
+        grid-template-columns: 1fr;
+    }
+    .jp-sidebar {
+        display: none;
+    }
+    .jp-hero h1 {
+        font-size: 26px;
+    }
+    .jp-nav-links {
+        display: none;
+    }
+}
